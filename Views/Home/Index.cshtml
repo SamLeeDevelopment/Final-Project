@@ -1,0 +1,28 @@
+﻿@model UserEnterBindingModel
+@{
+    ViewData["Title"] = "Quizlet Solver";
+}
+
+<div class="text-center">
+    <h4 id="subtitle">See if our algorithm can solve your question</h4>
+
+
+    <form asp-area="" asp-controller="Solver" asp-action="Query" method="post" id="queryForm">
+        <input required placeholder="Enter a problem here..." id="query" name="Question" />
+        <input required placeholder="Enter subjet here..." id="subject" name="Subject" />
+
+        <button type="submit" onclick="
+    if (document.getElementById('query').value != '' && document.getElementById('subject').value!= '') document.getElementById('loading').style.display = 'block';
+        ">
+            Search
+        </button>
+    </form>
+
+
+
+
+
+    <div id="loading" style="display: none;">
+        <img id="async_gif" style="width: 75px; margin-top: 75px;" src="~/loading.gif" />
+    </div>
+</div>

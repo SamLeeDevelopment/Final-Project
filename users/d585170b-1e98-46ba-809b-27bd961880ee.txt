@@ -1,0 +1,2 @@
+<span class='topic'>____ aren't allowed in the create view command.</span><br>ORDER BY
+ aren’t allowed in the CREATE VIEW command.

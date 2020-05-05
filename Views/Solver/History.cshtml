@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Question>
+
+@{
+    ViewData["Title"] = "Quizlet Solver";
+}
+
+<h4>Your Previousy Asked Questions</h4>
+
+@foreach (var question in Model)
+{
+    <div class="question">
+        <h6 class="query">
+            You asked: <p>@question.query</p>
+        </h6>
+        <h6 class="answer">
+            We found: <p>@Html.Raw(@question.answer)</p>
+        </h6>
+    </div>
+}

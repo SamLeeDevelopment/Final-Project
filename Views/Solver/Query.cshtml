@@ -1,0 +1,33 @@
+﻿@model Query
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Quizlet Solver";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h4>User: @User.Identity.Name</h4>
+}
+else
+{
+    <h4>User: Anonymous</h4>
+}
+<h6>Query</h6>
+<p>@Model.Question</p>
+<h6>Here's what we found</h6>
+@{
+    if (Model.IsMultipleAnswer)
+    {
+        <h6>Question was not found. Here are some suggestions:</h6>
+    }
+}
+
+
+
+
+<p>
+    @Html.Raw(Model.Answer)
+</p>
